@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <title>Books</title>
+  </head>
+  <body class="bg-gray-300">
+    <header class="flex items-center justify-center min-h-max">
+        <div class="flex items-center justify-center " >
+          <div class="flex items-center justify-center">
+            <h1 class="text-purple-600 text-4xl">get</h1>
+            <h1 class="text-green-600 text-6xl">Book</h1>
+          </div>
+        </header>
+      <div class="group flex items-center justify-center p-4 m-6 " >
+      <input class="h-5 w-[500px] text-white outline-4 rounded-lg  bg-amber-800 transition-height duration-200 group-focus-within:h-10 group-hover:h-10 px-2 [&:not(:placeholder-shown)]:h-10 peer" type="text" id="search-book" placeholder="Search Book" autocomplete="off">
+    </div>
+      <main>
+          <div>
+            <div class="flex items-center justify-center relative">
+              <button class="text-white bg-green-600 py-4 px-6 rounded-xl transform hover:scale-90 duration-150" id="myBtn" onclick="getBooks()">Search</button>
+              <div id="loadingIndicator" class="hidden animate-ping p-4 absolute text-yellow-50">Search</div>
+            </div>
+          </div>        
+            <div id="result" class="p-2 m-1"></div>
+        </div>
+      </main>
+      <div>
+        <div id="booksContainer" class="p-4 m-2 flex items-center mx-auto ">
+          <ul class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 row mt-3" id="books"></ul>
+        </div>
+        <div class="flex items-center justify-center py-4">
+          <button class="text-white bg-green-900 py-4 px-6 rounded-xl transform hover:scale-90 duration-150 hidden" id="loadMoreBooks">Show more books</button>
+        
+      </div>
+      <footer class="mt-auto">
+        <div class="py-2 text-center text-black">
+            <small>Copyright &copy; getBooks 2023</small>
+        </div>
+      </footer>
+      </div>
+    <script src="main.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </body>
+</html>
+
