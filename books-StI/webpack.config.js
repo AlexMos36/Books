@@ -11,10 +11,14 @@ const stylesHandler = isProduction
   : "style-loader";
 
 const config = {
-  entry: "./src/js/index.js",
+  entry: {
+    principal: "./src/js/index.js",
+    secondary: "./src/js/generateBooks.js",
+  },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "main.js",
+    filename: "[name].[contenthash].js",
+    clean: true,
   },
   devServer: {
     open: true,

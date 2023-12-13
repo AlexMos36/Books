@@ -28,6 +28,7 @@ input.addEventListener("keypress", function (e) {
 
 const getDescription = async (key, descriptionId) => {
   if (!key) {
+    return;
   }
   const url = `https://openlibrary.org${key}.json`;
 
@@ -63,12 +64,11 @@ const moreBooks = () => {
       bookDiv.className =
         "bg-gray-200 p-4 rounded-lg mt-3 md:flex md:flex-col lg:w-full";
       const buttonId = `get-description-${element.key}`;
-      const imagePath = booksImg;
       bookDiv.innerHTML += `
   <h4 class="font-bold text-lg mb-2">${titleBooks}</h4>
   <img src="../img/books-img.png" alt="book" class=" w-full h-32 sm:h-48 object-cover">
   <h3 class="text-gray-500 text-sm mb-4">${element.author_name}</h3>
-  <div class="text-bold text-base break-all text-center pb-5" id="description${element.key}"></div>
+  <div class="text-bold text-base break-all text-center pb-5" id="description${element.key}" style="display:none"></div>
   <div class="flex justify-center">
     <button class="btn text-sm text-white bg-gray-600 py-2 px-4 rounded-xl" id="${buttonId}">Show description</button>
   </div>
