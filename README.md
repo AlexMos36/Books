@@ -30,7 +30,6 @@ This project is a simple web application that allows users to search for books u
 ## Technologies Used
 
 - HTML
-- CSS
 - JavaScript
 - Webpack
 - Axios
