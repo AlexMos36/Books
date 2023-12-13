@@ -21,9 +21,6 @@ const config = {
     static: { directory: path.resolve(__dirname, "dist") },
     port: 5000,
     open: true,
-    hot: true,
-    compress: true,
-    historyApiFallback: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
