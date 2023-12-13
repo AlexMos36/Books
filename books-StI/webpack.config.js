@@ -11,18 +11,19 @@ const stylesHandler = isProduction
   : "style-loader";
 
 const config = {
-  entry: {
-    principal: "./src/js/index.js",
-    secondary: "./src/js/generateBooks.js",
-  },
+  entry: "./src/js/index.js",
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "[name].[contenthash].js",
+    filename: "main.js",
     clean: true,
   },
   devServer: {
+    static: { directory: path.resolve(__dirname, "dist") },
+    port: 5000,
     open: true,
-    host: "localhost",
+    hot: true,
+    compress: true,
+    historyApiFallback: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
