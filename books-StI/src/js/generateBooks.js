@@ -18,13 +18,13 @@ const toggleLoading = (isLoading) => {
   }
 };
 
-let input = document.getElementById("search-book");
-input.addEventListener("keypress", function (e) {
-  if (e.key === "Enter") {
-    e.preventDefault();
-    document.getElementById("myBtn").click();
-  }
-});
+// let input = document.getElementById("search-book");
+// input.addEventListener("keypress", function (e) {
+//   if (e.key === "Enter") {
+//     e.preventDefault();
+//     document.getElementById("myBtn").click();
+//   }
+// });
 
 const getDescription = async (key, descriptionId) => {
   if (!key) {
@@ -37,7 +37,15 @@ const getDescription = async (key, descriptionId) => {
     const description = response.data.description;
 
     const descriptionDiv = document.getElementById(descriptionId);
-    descriptionDiv.textContent = description || "No description available";
+
+    if (typeof description === "string") {
+      descriptionDiv.textContent = description || "No description available";
+    } else if (description && typeof description.value === "string") {
+      descriptionDiv.textContent =
+        description.value || "No description available";
+    } else {
+      descriptionDiv.textContent = "No description available";
+    }
 
     descriptionDiv.style.display =
       descriptionDiv.style.display === "none" ? "block" : "none";
