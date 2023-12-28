@@ -6,7 +6,7 @@ Search Books
 # Overview
 This project is a simple web application that allows users to search for books using a search bar, connecting to an external API to retrieve book information. The application displays up to 10 books at a time, with an option to load more books dynamically. Each book entry includes a brief description, and users can view additional details by clicking on the "Show description" button
 
-**Here you can try it**: https://celadon-unicorn-705124.netlify.app
+**Here you can try it**: https://effulgent-cascaron-aa9824.netlify.app/
 
 ## Usage
 
